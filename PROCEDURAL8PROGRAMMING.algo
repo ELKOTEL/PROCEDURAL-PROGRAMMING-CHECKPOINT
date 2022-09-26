@@ -1,0 +1,33 @@
+PROCEDURE dot_product(v1,v2:ARRAY_OF FLOAT)// num is the local variable for the procedure
+VAR
+    var product:FLOAT
+BEGIN
+    FOR i FROM 0 TO 2 STEP step  DO
+        product:= product + v1[i]*v2[i]
+    END_FOR
+    Write(product)
+END
+
+ALGORITHM Dot product
+VAR
+    var array_of_pairs : ARRAY_OF FLOAT[20];
+    // exp array_of_pairs = [[v1,v2],[v3,v4],[v5,v6]...]
+    var pair : ARRAY_OF FLOAT[2];
+    result:INTEGER
+
+BEGIN
+    Read (array_of_pairs)
+    FOR i FROM 0 TO array_of_pairs.length STEP step  DO
+    pair:=array_of_pairs[i] // exp [v1,v2]
+    result:= dot_product(pair[0],pair[1])
+    IF (result == 0) THEN
+        Write('orthogonal')
+    ELSE
+        Write('not orthogonal')
+    END_IF
+    
+        
+    END_FOR
+
+
+END
